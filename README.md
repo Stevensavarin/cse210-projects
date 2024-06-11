@@ -1,6 +1,5 @@
 # cse210-ww-student-template
-Steven Savarin
-version of CSE 210.
+Steven Savarin | CSE 210.
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
