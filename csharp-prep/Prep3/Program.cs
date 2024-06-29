@@ -1,43 +1,37 @@
 using System;
-using System.Diagnostics;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Fraction f1 = new Fraction();
-        Console.WriteLine(f1.GetFractionString());
-        Console.WriteLine(f1.GetFractionDecimal());
 
-        Fraction f2 = new Fraction(5);
-        Console.WriteLine(f2.GetFractionString());
-        Console.WriteLine(f2.GetFractionDecimal());
+        // Get a random number
+        Random randomNumber = new Random();
+        int magicNumber = randomNumber.Next(1, 101);
 
-        Fraction f3 = new Fraction(3, 4);
-        Console.WriteLine(f3.GetFractionString());
-        Console.WriteLine(f3.GetFractionDecimal());
+        Console.WriteLine($"Guess the magic number");
 
-        Fraction f4 = new Fraction(1, 3);
-        Console.WriteLine(f4.GetFractionString());
-        Console.WriteLine(f4.GetFractionDecimal());
+        int userGuess;
 
-        Console.Write("Insert top: ");
-        string topInput = Console.ReadLine();
-        int top = int.Parse(topInput);
+        do
+        {
+            Console.Write("What is your guess? ");
+            string valueFromIUser = Console.ReadLine();
+            userGuess = int.Parse(valueFromIUser);
 
-        Console.Write("Insert bottom: ");
-        string bottomInput = Console.ReadLine();
-        int bottom = int.Parse(bottomInput);
-        
-        Fraction f5 = new Fraction();
+            if (userGuess > magicNumber)
+            {
+                Console.WriteLine("Lower");
+            }
+            else if (userGuess < magicNumber)
+            {
+                Console.WriteLine("Higher");
+            }
+            else
+            {
+                Console.WriteLine("You guessed it!");
+            }
 
-        f5.SetTop(top);
-        f5.SetBottom(bottom);
-
-        Console.WriteLine();
-        Console.WriteLine($"Top: {f5.GetTop()}");
-        Console.WriteLine($"Bottom: {f5.GetBottom()}");
-        Console.WriteLine(f5.GetFractionString());
-        Console.WriteLine(f5.GetFractionDecimal());
+        } while (userGuess != magicNumber);
     }
 }
