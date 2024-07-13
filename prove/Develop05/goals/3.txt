@@ -1,0 +1,3 @@
+500
+Simple Goal: practice dutch | i would like to dedicate more time to learn dutch | 500 | True
+Simple Goal: practice ducth | i would like to dedicate more time to learn dutch | 500 | False
